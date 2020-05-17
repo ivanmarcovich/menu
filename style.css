@@ -1,0 +1,65 @@
+.menu {
+  display: flex;
+  margin: 0;
+  background: steelblue;
+  width: 100%;
+  height: 200px;
+  top: 50%;
+}
+
+.menu li:hover {
+  background: radial-gradient(circle at 65% 15%, black, white);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  color: white;
+  padding: 10px;
+  flex-grow: 1;
+}
+
+li:hover > .nested-menu {
+  background: linear-gradient( red,orange,yellow,green,cyan,blue,purple);
+  opacity: 1;
+  visibility: visible;
+  transform: unset;
+  right: -100%;
+}
+
+body {
+    background-color: #62bbd3;
+    background-image: 
+      linear-gradient(30deg, #80c9dd 12%, transparent 12.5%, transparent 87%, #80c9dd 87.5%, #80c9dd),
+      linear-gradient(150deg, #80c9dd 12%, transparent 12.5%, transparent 87%, #80c9dd 87.5%, #80c9dd),
+      linear-gradient(30deg, #80c9dd 12%, transparent 12.5%, transparent 87%, #80c9dd 87.5%, #80c9dd),
+      linear-gradient(150deg, #80c9dd 12%, transparent 12.5%, transparent 87%, #80c9dd 87.5%, #80c9dd),
+      linear-gradient(60deg, #d5eaf0 25%, transparent 25.5%, transparent 75%, #d5eaf0 75%, #d5eaf0),
+      linear-gradient(60deg, #d5eaf0 25%, transparent 25.5%, transparent 75%, #d5eaf0 75%, #d5eaf0);
+    background-size: 40px 70px;
+    background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
+  }
+
+.nested-menu {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 38px;
+  left: 0;
+  width: 100%;
+  transform: translateY(-100%);
+  transition: opacity 1s, transform .3s;
+}
+
+.nested-menu .nested-menu {
+  right:0;
+  left: unset;
+  top: 0;
+  transform: translateX(-100%);
+}
